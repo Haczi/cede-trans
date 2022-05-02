@@ -1,0 +1,688 @@
+@import './mixins';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62, 5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.6rem;
+	color: white;
+	background-color: whitesmoke;
+}
+a {
+	text-decoration: none;
+}
+.wrapper {
+	margin: 0 auto;
+	max-width: 1220px;
+	width: 100%;
+}
+.nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	// background-color: rgba(3, 3, 3, 0.715);
+	z-index: 200;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+	.logo {
+		margin-top: 0.6em;
+		margin-left: 1em;
+		img {
+			height: 1.3em;
+			
+		}
+		z-index: 100;
+	}
+
+	&-desktop {
+		display: none;
+	}
+
+	&-mobile {
+		display: none;
+		justify-content: center;
+		align-items: center;
+		transform: translateX(0);
+		position: fixed;
+		top: 0;
+		background-image: linear-gradient(90deg, hsla(62, 62%, 40%, 1) 0%, hsla(132, 42%, 31%, 1) 100%);
+		width: 100%;
+		height: 100vh;
+		z-index: 10;
+		transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+		&--active {
+			transform: translateX(0);
+		}
+
+		&__link {
+			position: relative;
+			display: block;
+			padding: 0.5em 2em;
+			text-decoration: none;
+			color: whitesmoke;
+			margin: 0.5em 0;
+			font-size: 2rem;
+
+			&::before {
+				position: absolute;
+				transform: scaleY(0);
+				content: '';
+				width: 3px;
+				height: 100%;
+				background-color: whitesmoke;
+				left: 0;
+				top: 0;
+				transition: transform 0.5s;
+			}
+			&:hover::before {
+				transform: scaleY(1);
+			}
+		}
+	}
+
+	&__link {
+		position: relative;
+		color: white;
+		margin: 0.5em 1em;
+		text-transform: uppercase;
+
+		text-decoration: none;
+		transition: 0.3s;
+
+		&::after,
+		&::before {
+			content: '';
+			width: 0px;
+			height: 0px;
+			border-bottom: 2px solid white;
+			position: absolute;
+			bottom: 0px;
+			transition: 0.3s;
+		}
+
+		&::after {
+			left: 50%;
+		}
+		&::before {
+			right: 50%;
+		}
+		&:hover:after,
+		&:hover::before {
+			width: 50%;
+		}
+	}
+	.burger-btn {
+		position: fixed;
+		top: 0.5em;
+		right: 20px;
+		padding: 0.5em;
+		background: none;
+		border: 1px solid transparent;
+		cursor: pointer;
+		z-index: 100;
+
+		&:hover {
+			.burger-btn__bars::after,
+			.burger-btn__bars::before {
+				width: 100%;
+			}
+		}
+		&__box {
+			position: relative;
+			width: 40px;
+			height: 30px;
+		}
+		&:focus {
+			outline: none;
+			border: 1px solid rgba(255, 255, 255, 0.5);
+			border-radius: 8px;
+		}
+		&__bars,
+		&__bars::after,
+		&__bars::before {
+			@include burgerBtn;
+		}
+		&__bars {
+			width: 100%;
+			top: 2px;
+			&::after {
+				top: 13px;
+				width: 60%;
+			}
+			&::before {
+				top: 26px;
+				width: 30%;
+				transition-delay: 0.1s;
+			}
+		}
+	}
+	.black-bars-color,
+	.black-bars-color::after,
+	.black-bars-color::before {
+		background-color: black;
+	}
+}
+.header {
+	position: relative;
+	height: 500px;
+	background-image: url(/dist/img/header-img-s.jpg);
+	background-size: cover;
+	background-position: center;
+	//   background-position: 0% 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__bg {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background-color: rgba(1, 1, 1, 0.618);
+	}
+	&__text {
+		text-align: center;
+		margin-top: 3em;
+		z-index: 10;
+
+		p {
+			font-size: 1.3rem;
+			margin-top: 1em;
+		}
+		h1 {
+			font-weight: 200;
+		}
+	}
+}
+
+//sections///
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: whitesmoke;
+	color: #333;
+	.text-aboutus {
+		text-align: left;
+		padding: 1em;
+		h2 {
+			padding: 1em;
+		}
+		p {
+			margin-bottom: 1em;
+		}
+	}
+
+	.photos {
+		width: 100%;
+
+		img {
+			height: 500px;
+			object-fit: cover;
+		}
+	}
+}
+
+.achivments {
+	position: relative;
+	background-image: url(/dist/img/ciezarowka-small.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	color: whitesmoke;
+	
+
+	&__title {
+		position: relative;
+		text-align: center;
+
+		color: white;
+		z-index: 11;
+		color: whitesmoke;
+		font-size: 2rem;
+		padding-top: 3em;
+		margin-bottom: 2em;
+	}
+
+	.container2 {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		padding-bottom: 3em;
+
+		.achiv {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			z-index: 10;
+			text-align: center;
+			text-transform: uppercase;
+			padding: 1em 0;
+			overflow-wrap: break-word;
+			max-width: 100%;
+			overflow-wrap: break-word;
+			span {
+				font-size: 4rem;
+				color: gold;
+			}
+			p {
+				font-weight: 200;
+			}
+			i {
+				font-size: 3rem;
+				margin-bottom: 0.5em;
+
+				color: gold;
+			}
+		}
+	}
+}
+
+.offer {
+	&__title {
+		color: #333;
+		padding: 1em;
+		text-align: center;
+	}
+
+	.cards {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		.card {
+			position: relative;
+			margin: 10px;
+			width: 90%;
+			max-width: 390px;
+			height: 600px;
+			text-align: center;
+			background-size: cover;
+			background-position: center;
+			border-radius: 15px;
+			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+
+			.card-title {
+				position: absolute;
+				top: 18%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: rgb(247, 248, 246);
+				width: 100%;
+				background-color: rgba($color: #000000, $alpha: 0.7);
+			}
+		}
+		.one {
+			background-image: url(/dist/img/transport-mapa.jpg);
+			overflow: hidden;
+		}
+
+		.two {
+			background-image: url(/dist/img/spedycja.jpg);
+			overflow: hidden;
+		}
+		.three {
+			background-image: url(/dist/img/magazyn.jpg);
+			overflow: hidden;
+		}
+		.four {
+			background-image: url(/dist/img/detal-dys.jpg);
+			overflow: hidden;
+		}
+	}
+
+	.offer-btn {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		padding: 10px;
+		background: none;
+		border: none;
+		font-size: 30px;
+		color: white;
+		text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+		z-index: 5;
+		cursor: crosshair;
+	}
+	.offer-btn:hover ~ .text-info {
+		clip-path: circle(100% at 42% 71%);
+	}
+
+	.text-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		padding: 80px 30px;
+		background-color: rgba(0, 0, 0, 0.7);
+		color: white;
+		clip-path: circle(0% at 42% 76%);
+		transition: clip-path 0.5s;
+	}
+
+	h1 {
+		color: goldenrod;
+	}
+	h2 {
+		margin-bottom: 30px;
+	}
+
+	.offer-information {
+		color: #333;
+		text-align: center;
+		margin-top: 1em;
+		width: 100%;
+		padding: 0.5em;
+	}
+}
+
+.office {
+	color: whitesmoke;
+	margin-top: 4em;
+	background-image: url(/dist/img/autostrada-noc.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	overflow: hidden;
+	padding-bottom: 3em;
+
+	h2 {
+		text-align: center;
+		padding: 1em 0;
+	}
+
+	&__container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__card {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: end;
+		border: 1px solid rgba(0, 0, 0, 0.353);
+		border-radius: 8px;
+		margin: 1em;
+		box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.542);
+		background-color: rgba(1, 1, 1, 0.8);
+		width: 300px;
+		height: 400px;
+
+		&--head {
+			img {
+				position: absolute;
+				top: -25px;
+				right: -30px;
+				object-fit: cover;
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+			}
+		}
+		&--body {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			padding: 0em 1em 1em;
+			h3 {
+				padding: 1em 0;
+			}
+			i {
+				color: goldenrod;
+			}
+			.details {
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				padding: 0.3em 0;
+			}
+		}
+	}
+}
+
+.contact {
+	color: rgb(37, 36, 36);
+	// 	background-color: #ffcd00;
+	// background-image: linear-gradient(315deg, #ffcd00 0%, #005238 74%);
+	// background: linear-gradient(to bottom, #000000, #434343);
+
+	h2 {
+		text-align: center;
+		padding-top: 1em;
+	}
+	&__container {
+		display: flex;
+		width: 100%;
+		flex-wrap: wrap;
+	}
+	&__info {
+		width: 100%;
+		padding: 1em;
+		margin: 2em 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		text-align: center;
+	}
+	&__form {
+		border: 1px solid rgba(0, 0, 0, 0.434);
+		border-radius: 5px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: #333;
+		overflow: hidden;
+		box-shadow: 0 0 10px rgb(85, 85, 85);
+		background-color: #fff;
+		margin: 2em auto;
+		width: 90%;
+
+		.form {
+			max-width: 100%;
+			font-size: 1.1rem;
+			padding: 1em;
+			text-align: left;
+
+			h3 {
+				margin: 1em;
+				text-align: center;
+			}
+			&__box {
+				margin-bottom: 1em;
+
+				label {
+					display: inline-block;
+					width: 100%;
+					margin-bottom: 0.2em;
+				}
+
+				input {
+					width: 100%;
+					padding: 0.6em;
+					font-size: 0.8rem;
+					border: 1px solid rgb(197, 197, 197);
+					border-radius: 5px;
+				}
+				textarea {
+					max-width: 100%;
+					min-width: 100%;
+					max-height: 200px;
+					min-height: 100px;
+				}
+
+				&.error {
+					input {
+						border: 1px solid rgb(0, 137, 250);
+						background-color: rgba(0, 137, 250, 0.1);
+					}
+					.error-text {
+						visibility: visible;
+					}
+				}
+				.error-text {
+					margin: 5px 0px 0px 10px;
+					font-size: 0.8rem;
+					color: rgb(0, 137, 250);
+					visibility: hidden;
+				}
+			}
+		}
+		.control-buttons {
+			display: flex;
+			justify-content: end;
+		}
+
+		.send,
+		.clear,
+		.close {
+			display: block;
+			margin-left: 1em;
+			padding: 1em 0;
+			width: 30%;
+			background-image: linear-gradient(90deg, hsla(62, 62%, 40%, 1) 0%, hsla(132, 42%, 31%, 1) 100%);
+			// background-color: rgb(0, 137, 250);
+			border: none;
+			border-radius: 8px;
+			color: #fff;
+			cursor: pointer;
+		}
+
+		.send:hover,
+		.clear:hover,
+		.close:hover {
+			background-image: linear-gradient(90deg, hsla(132, 42%, 31%, 1) 0%, hsla(62, 62%, 40%, 1) 100%);
+		}
+
+		.popup {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			width: 50%;
+			min-width: 270px;
+			height: 150px;
+			text-align: center;
+			background-color: #fff;
+			top: -290px;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			box-shadow: 0 0 10px black;
+			border-radius: 5px;
+			transition: top 0.5s;
+
+			.close {
+				margin-top: 2em;
+				width: 20%;
+			}
+		}
+
+		.popup-show {
+			top: 90px;
+		}
+	}
+}
+
+.mapa {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	color: #333;
+	padding-bottom: 2em;
+
+	.mapa1,
+	.mapa2 {
+		width: 100%;
+	}
+
+	iframe {
+		width: 100%;
+		height: 300px;
+	}
+
+	h3 {
+		text-align: center;
+		padding: 2em 0;
+	}
+}
+
+.footer{
+	background-color: #2e2e2e;
+
+	&__boxes{
+		display: flex;
+		width: 100%;
+	}
+
+	&__box{
+		width: 50%;
+
+		&-company{
+			display: flex;
+			flex-direction: column;
+			text-align: end;
+			padding: 1em;
+			
+		}
+		&-list{
+			list-style: none;
+
+			&-item{
+				padding: .2em 0;
+
+				a{
+					color: #fff;
+				}
+			}
+		}
+
+		&-logo{
+			padding: 1em;
+
+			img{
+				width: 100px;
+			}
+		}
+		&-social{
+			padding: .5em 0;
+			a{
+				i{
+					font-size: 3rem;
+					color: rgb(54, 104, 211);
+				}
+			}
+		}
+	}
+&__bottom-text{
+	text-align: center;
+}
+}
+@import './media';
