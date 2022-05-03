@@ -47,7 +47,6 @@ a {
 		margin-left: 1em;
 		img {
 			height: 1.3em;
-			
 		}
 		z-index: 100;
 	}
@@ -183,7 +182,7 @@ a {
 .header {
 	position: relative;
 	height: 500px;
-	background-image: url(/dist/img/header-img-s.jpg);
+	background-image: url(../img/header-img-s.jpg);
 	background-size: cover;
 	background-position: center;
 	//   background-position: 0% 50%;
@@ -243,12 +242,11 @@ a {
 
 .achivments {
 	position: relative;
-	background-image: url(/dist/img/ciezarowka-small.jpg);
+	background-image: url(../img/ciezarowka-small.jpg);
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
 	color: whitesmoke;
-	
 
 	&__title {
 		position: relative;
@@ -334,20 +332,20 @@ a {
 			}
 		}
 		.one {
-			background-image: url(/dist/img/transport-mapa.jpg);
+			background-image: url(../img/transport-mapa.jpg);
 			overflow: hidden;
 		}
 
 		.two {
-			background-image: url(/dist/img/spedycja.jpg);
+			background-image: url(../img/spedycja.jpg);
 			overflow: hidden;
 		}
 		.three {
-			background-image: url(/dist/img/magazyn.jpg);
+			background-image: url(../img/magazyn.jpg);
 			overflow: hidden;
 		}
 		.four {
-			background-image: url(/dist/img/detal-dys.jpg);
+			background-image: url(../img/detal-dys.jpg);
 			overflow: hidden;
 		}
 	}
@@ -404,7 +402,7 @@ a {
 .office {
 	color: whitesmoke;
 	margin-top: 4em;
-	background-image: url(/dist/img/autostrada-noc.jpg);
+	background-image: url(../img/autostrada-noc.jpg);
 	background-size: cover;
 	background-attachment: fixed;
 	overflow: hidden;
@@ -469,9 +467,6 @@ a {
 
 .contact {
 	color: rgb(37, 36, 36);
-	// 	background-color: #ffcd00;
-	// background-image: linear-gradient(315deg, #ffcd00 0%, #005238 74%);
-	// background: linear-gradient(to bottom, #000000, #434343);
 
 	h2 {
 		text-align: center;
@@ -567,7 +562,6 @@ a {
 			padding: 1em 0;
 			width: 30%;
 			background-image: linear-gradient(90deg, hsla(62, 62%, 40%, 1) 0%, hsla(132, 42%, 31%, 1) 100%);
-			// background-color: rgb(0, 137, 250);
 			border: none;
 			border-radius: 8px;
 			color: #fff;
@@ -634,55 +628,54 @@ a {
 	}
 }
 
-.footer{
+.footer {
 	background-color: #2e2e2e;
 
-	&__boxes{
+	&__boxes {
 		display: flex;
 		width: 100%;
 	}
 
-	&__box{
+	&__box {
 		width: 50%;
 
-		&-company{
+		&-company {
 			display: flex;
 			flex-direction: column;
 			text-align: end;
 			padding: 1em;
-			
 		}
-		&-list{
+		&-list {
 			list-style: none;
 
-			&-item{
-				padding: .2em 0;
+			&-item {
+				padding: 0.2em 0;
 
-				a{
+				a {
 					color: #fff;
 				}
 			}
 		}
 
-		&-logo{
+		&-logo {
 			padding: 1em;
 
-			img{
+			img {
 				width: 100px;
 			}
 		}
-		&-social{
-			padding: .5em 0;
-			a{
-				i{
+		&-social {
+			padding: 0.5em 0;
+			a {
+				i {
 					font-size: 3rem;
 					color: rgb(54, 104, 211);
 				}
 			}
 		}
 	}
-&__bottom-text{
-	text-align: center;
-}
+	&__bottom-text {
+		text-align: center;
+	}
 }
 @import './media';
