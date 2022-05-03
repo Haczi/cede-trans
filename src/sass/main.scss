@@ -161,14 +161,14 @@ a {
 		}
 		&__bars {
 			width: 100%;
-			top: 2px;
+			top: 0px;
 			&::after {
-				top: 13px;
+				top: 14px;
 				width: 60%;
 			}
 			&::before {
-				top: 26px;
-				width: 30%;
+				top: 29px;
+				width: 26%;
 				transition-delay: 0.1s;
 			}
 		}
