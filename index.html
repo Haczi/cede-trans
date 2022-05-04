@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="head">
         <div class="header">
             <div class="header__text">
                 <h1>Transport i Logistyka</h1>
@@ -32,14 +32,17 @@
                 <a class="nav__link" href="#office">biuro</a>
                 <a class="nav__link" href="#contact">kontakt</a>
             </div>
-            <div class="nav-mobile"><a class="nav__link" href="#aboutus">o nas</a>
-                <a class="nav__link" href="#offer">oferta</a>
-                <a class="nav__link" href="#office">biuro</a>
-                <a class="nav__link" href="#contact">kontakt</a>
+            <div class="nav-mobile"><a class="nav-mobile__link" href="#aboutus">o nas</a>
+                <a class="nav-mobile__link" href="#offer">oferta</a>
+                <a class="nav-mobile__link" href="#office">biuro</a>
+                <a class="nav-mobile__link" href="#contact">kontakt</a>
             </div>
             <button class="burger-btn">
                 <div class="burger-btn__box">
-                    <div class="burger-btn__bars"></div>
+                    <span class="burger-btn__line1"></span>
+                    <span class="burger-btn__line2"></span>
+                    <span class="burger-btn__line3"></span>
+
                 </div>
             </button>
         </div>
@@ -172,7 +175,8 @@
                         <div class="details"><i class="fa-solid fa-at"></i>
                             <p>pawel@cos.com</p>
                         </div>
-                        <div class="details"><img src="http://status.gadu-gadu.pl/users/status.asp?id=3029340&styl=5" alt="status komunikatora gg">
+                        <div class="details"><img src="http://status.gadu-gadu.pl/users/status.asp?id=3029340&styl=5"
+                                alt="status komunikatora gg">
                             <p>3329840</p>
                         </div>
                     </div>
@@ -194,7 +198,8 @@
                         <div class="details"><i class="fa-solid fa-at"></i>
                             <p>pawel@cos.com</p>
                         </div>
-                        <div class="details"><img src="http://status.gadu-gadu.pl/users/status.asp?id=3029340&styl=5" alt="status komunikatora gg">
+                        <div class="details"><img src="http://status.gadu-gadu.pl/users/status.asp?id=3029340&styl=5"
+                                alt="status komunikatora gg">
                             <p>3029340</p>
                         </div>
                     </div>
@@ -216,17 +221,15 @@
                         <div class="details"><i class="fa-solid fa-at"></i>
                             <p>pawel@cos.com</p>
                         </div>
-                        <div class="details"><img src="http://status.gadu-gadu.pl/users/status.asp?id=3029340&styl=5" alt="status komunikatora gg">
+                        <div class="details"><img src="http://status.gadu-gadu.pl/users/status.asp?id=3029340&styl=5"
+                                alt="status komunikatora gg">
                             <p>3029340</p>
                         </div>
                     </div>
-
                 </div>
-
-
             </div>
         </section>
-        <section class="contact" id="contact">
+        <section class="contact wrapper" id="contact">
             <h2>Skontaktuj się z nami</h2>
             <div class="contact__container wrapper">
                 <div class="contact__form">
@@ -255,9 +258,9 @@
                             <p>Formularz został poprawnie wysłany!</p>
                             <button class="close">Zamknij</button>
                         </div>
-                    </div>
+                </div>
                 </form>
-                
+
                 <div class="contact__info">
                     <h3>Adres:</h3>
                     <p>PPHU CeDeTrans sp. z.o.o.</p>
@@ -274,8 +277,9 @@
             <div class="mapa1">
                 <h3>Mapa Dojazdu - Biuro Zielona Góra</h3>
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d157277.87268734036!2d15.2099541328125!3d51.9801457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470614809240af71%3A0x8718d90f063ff6ef!2sCEDETRANS!5e0!3m2!1spl!2spl!4v1651353791827!5m2!1spl!2splstyle" style=
-                    "border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d157277.87268734036!2d15.2099541328125!3d51.9801457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470614809240af71%3A0x8718d90f063ff6ef!2sCEDETRANS!5e0!3m2!1spl!2spl!4v1651353791827!5m2!1spl!2splstyle"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="mapa2">
                 <h3>Mapa dojazdu - Magazyn Babimost</h3>
@@ -299,24 +303,25 @@
                     <p class="logo"><img src="dist/img/logo/xlogo.png" alt=""></p>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit optio consequatur quam </p>
                     <div class="footer__box-social">
-                       
-                        <a href="https://www.facebook.com/pphu.cedetrans" target=" _blink"class="footer__box-link"><i class="fab fa-facebook-square"></i></a>
-                        
+
+                        <a href="https://www.facebook.com/pphu.cedetrans" target=" _blink" class="footer__box-link"><i
+                                class="fab fa-facebook-square"></i></a>
+
                     </div>
                 </div>
-            
 
-           
-            <div class="footer__box footer__box-company">
-                <h3 class="footer__box-title">Firma</h3>
-                <ul class="footer__box-list">
-                    <li class="footer__box-list-item"><a href="#aboutus">O nas</a></li>
-                    <li class="footer__box-list-item"><a href="#office">Zarzad</a></li>
-                    <li class="footer__box-list-item"><a href="#">Kariera</a></li>
-                    <li class="footer__box-list-item"><a href="#">FAQ</a></li>
-                </ul>
-                
-            </div>
+
+
+                <div class="footer__box footer__box-company">
+                    <h3 class="footer__box-title">Firma</h3>
+                    <ul class="footer__box-list">
+                        <li class="footer__box-list-item"><a href="#aboutus">O nas</a></li>
+                        <li class="footer__box-list-item"><a href="#office">Zarzad</a></li>
+                        <li class="footer__box-list-item"><a href="#">Kariera</a></li>
+                        <li class="footer__box-list-item"><a href="#">FAQ</a></li>
+                    </ul>
+
+                </div>
             </div>
         </div>
         <hr>

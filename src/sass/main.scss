@@ -19,6 +19,10 @@ body {
 	color: white;
 	background-color: whitesmoke;
 }
+
+[id]{
+	scroll-margin-top: 56px;
+}
 a {
 	text-decoration: none;
 }
@@ -27,6 +31,10 @@ a {
 	max-width: 1220px;
 	width: 100%;
 }
+
+.visible {
+	visibility: hidden;
+}
 .nav {
 	display: flex;
 	align-items: center;
@@ -34,7 +42,6 @@ a {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	// background-color: rgba(3, 3, 3, 0.715);
 	z-index: 200;
 
 	&__container {
@@ -56,19 +63,22 @@ a {
 	}
 
 	&-mobile {
-		display: none;
+		display: flex;
+		opacity: 0;
 		justify-content: center;
 		align-items: center;
-		transform: translateX(0);
+		flex-direction: column;
+		transform: translateX(-100%);
 		position: fixed;
 		top: 0;
-		background-image: linear-gradient(90deg, hsla(62, 62%, 40%, 1) 0%, hsla(132, 42%, 31%, 1) 100%);
+		background: linear-gradient(to right, #000000, #0f9b0f);
 		width: 100%;
 		height: 100vh;
 		z-index: 10;
-		transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+		transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
 		&--active {
 			transform: translateX(0);
+			opacity: 1;
 		}
 
 		&__link {
@@ -77,8 +87,9 @@ a {
 			padding: 0.5em 2em;
 			text-decoration: none;
 			color: whitesmoke;
-			margin: 0.5em 0;
+			margin: .5em 0;
 			font-size: 2rem;
+			text-transform: uppercase;
 
 			&::before {
 				position: absolute;
@@ -139,8 +150,8 @@ a {
 		z-index: 100;
 
 		&:hover {
-			.burger-btn__bars::after,
-			.burger-btn__bars::before {
+			.burger-btn__line2,
+			.burger-btn__line3{
 				width: 100%;
 			}
 		}
@@ -151,34 +162,75 @@ a {
 		}
 		&:focus {
 			outline: none;
-			border: 1px solid rgba(255, 255, 255, 0.5);
-			border-radius: 8px;
+			.burger-btn__line2,
+			.burger-btn__line3,
+			.burger-btn__line1{
+				background-color: rgba(255, 255, 255, 0.774);
+			}
 		}
-		&__bars,
-		&__bars::after,
-		&__bars::before {
+		&__line1,
+		&__line2,
+		&__line3 {
 			@include burgerBtn;
+			transition: all .3s;
+			
 		}
-		&__bars {
+		&__line1 {
 			width: 100%;
 			top: 0px;
-			&::after {
+		
+		
+		}
+
+			&__line2 {
 				top: 14px;
 				width: 60%;
+				
 			}
-			&::before {
+			&__line3{
 				top: 29px;
 				width: 26%;
-				transition-delay: 0.1s;
+				
+				
 			}
+		
+	}
+	@keyframes navItemsAnimation {
+		from {
+			transform: translateX(-200%);
+		}
+		to {
+			transform: translateX(0);
 		}
 	}
-	.black-bars-color,
-	.black-bars-color::after,
-	.black-bars-color::before {
+	.nav-items-animation {
+		animation: navItemsAnimation 1s both;
+	}
+
+	.black-bars-color
+	{
 		background-color: black;
 	}
 }
+
+
+.made-x{
+	
+	top: 14px !important;
+	transform: rotate(45deg);
+	
+}
+.made-y{
+
+	top: 14px !important;
+	width: 100% !important;
+	transform: rotate(-45deg);
+}
+.made-middle{
+
+	opacity: 0;
+}
+
 .header {
 	position: relative;
 	height: 500px;
@@ -397,7 +449,7 @@ a {
 	.offer-information {
 		color: #333;
 		text-align: center;
-		margin-top: 1em;
+		margin: 1em 0;
 		width: 100%;
 		padding: 0.5em;
 	}
@@ -405,12 +457,12 @@ a {
 
 .office {
 	color: whitesmoke;
-	margin-top: 4em;
 	background-image: url(../img/autostrada-noc.jpg);
 	background-size: cover;
 	background-attachment: fixed;
 	overflow: hidden;
-	padding-bottom: 3em;
+	padding-top: 2em;
+	
 
 	h2 {
 		text-align: center;
@@ -422,6 +474,7 @@ a {
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
+		padding: 2em 0;
 	}
 
 	&__card {
@@ -452,10 +505,12 @@ a {
 		&--body {
 			display: flex;
 			flex-direction: column;
-			align-items: flex-end;
+			align-items: flex-start;
 			padding: 0em 1em 1em;
 			h3 {
 				padding: 1em 0;
+				margin-bottom: 1em;
+				
 			}
 			i {
 				color: goldenrod;
@@ -466,7 +521,7 @@ a {
 				justify-content: space-between;
 				padding: 0.3em 0;
 
-				p{
+				p {
 					font-size: 1rem;
 				}
 			}
@@ -505,7 +560,7 @@ a {
 		overflow: hidden;
 		box-shadow: 0 0 10px rgb(85, 85, 85);
 		background-color: #fff;
-		margin: 2em .5em;
+		margin: 2em auto;
 		width: 90%;
 
 		.form {
