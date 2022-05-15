@@ -51,7 +51,7 @@
         <section id="aboutus" class="wrapper">
             <div class="container">
                 <div class="text-aboutus">
-                    <h2>Nasza myśl</h2>
+                    <h2>O nas</h2>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor reiciendis aut necessitatibus,
                         cupiditate quo ducimus mollitia illo eaque, quos totam eum repellat unde minus, similique
                         laudantium quis libero nihil saepe voluptatibus tempora. Rerum voluptatum consectetur voluptate
@@ -79,22 +79,22 @@
             </div>
             <div class="container2 wrapper">
                 <div class="achiv"><i class="fa-solid fa-hourglass"></i>
-                    <p>W branży od</p><span>30</span>
+                    <p>W branży od</p><span class="achiv__counter" data-number="30">0</span>
                     <p>lat
                     </p>
                 </div>
                 <div class="achiv"><i class="fa-solid fa-people-group"></i>
-                    <p>Ponad</p><span>1000</span>
+                    <p>Ponad</p><span class="achiv__counter" data-number="100000">0</span>
                     <p>zadowolonych klientów
                     </p>
                 </div>
                 <div class="achiv"><i class="fa-solid fa-truck-moving"></i>
-                    <p>Przejechalismy</p> <span>10000000</span>
+                    <p>Przejechalismy</p> <span class="achiv__counter" data-number="588888">0</span>
                     <p>km
                     </p>
                 </div>
                 <div class="achiv"><i class="fa-solid fa-truck-ramp-box"></i>
-                    <p>Przewiezlismy</p> <span>10000000000</span>
+                    <p>Przewiezlismy</p> <span class="achiv__counter" data-number="53252525">0</span>
                     <p>ton załadunku
                     </p>
                 </div>
@@ -157,9 +157,14 @@
             </div>
         </section>
         <section class="office" id="office">
-            <h2>Biuro</h2>
+
+            <div class="colorOffice yellow"></div>
+            <div class="colorOffice yellow2"></div>
+
             <div class="office__container">
+                <h2>Biuro</h2>
                 <div class="office__card">
+
                     <div class="office__card--head">
                         <img src="dist/img/personel/xpawel.jpg..webp" alt="zdjecie szefa">
                     </div>
@@ -258,8 +263,9 @@
                             <p>Formularz został poprawnie wysłany!</p>
                             <button class="close">Zamknij</button>
                         </div>
+                    </form>
                 </div>
-                </form>
+
 
                 <div class="contact__info">
                     <h3>Adres:</h3>
